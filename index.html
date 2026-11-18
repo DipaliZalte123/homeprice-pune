@@ -1,1 +1,47 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>HomePrice Pune</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}body{background:#f8fafc}.topbar{background:#059669;color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:700}nav{display:flex;justify-content:space-between;align-items:center;padding:16px 5%;background:#fff;position:sticky;top:0;box-shadow:0 2px 10px rgba(0,0,0,.1)}.logo{font-size:24px;font-weight:900;color:#059669}.hero{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400');background-size:cover;color:#fff;text-align:center;padding:70px 20px 80px}.hero h1{font-size:40px}.hero h1 span{color:#fbbf24}.hero-btn{background:#f59e0b;color:#fff;padding:14px 28px;border:none;border-radius:30px;font-size:17px;font-weight:800;margin-top:18px;cursor:pointer}.card{max-width:900px;margin:-35px auto 10px;background:#fff;border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.15);display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px}.card input,.card select{padding:12px;border:1.5px solid #e2e8f0;border-radius:10px;width:100%}.card button{background:#059669;color:#fff;border:none;border-radius:10px;padding:12px 20px;font-weight:800;cursor:pointer}#result{text-align:center;font-weight:800;color:#059669;font-size:20px;margin:12px}.sec{max-width:1050px;margin:auto;padding:25px 18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.prop{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.08)}.prop img{width:100%;height:180px;object-fit:cover}.pb{padding:14px}.price{color:#059669;font-weight:900;font-size:20px}footer{background:#0f172a;color:#fff;text-align:center;padding:30px;margin-top:20px}@media(max-width:700px){.card{grid-template-columns:1fr}.hero h1{font-size:28px}}</style></head><body><div class="topbar">🎉 1000+ Happy Families • 100% FREE Price Check</div><nav><div class="logo">🏠 HomePrice Pune</div><div><b>Book Free Visit</b></div></nav><div class="hero"><h1>Find The Right Price<br><span>For Your Home In Pune!</span></h1><p style="margin-top:12px">Baner • Wakad • Hinjewadi • Viman Nagar • Kothrud</p><button class="hero-btn" onclick="document.getElementById('predict').scrollIntoView()">✨ Check Price For FREE →</button></div><div class="sec" id="predict"><div class="card"><input id="area" type="number" placeholder="Area e.g. 1200 sq.ft"><select id="bhk"><option value="2">2 BHK</option><option value="3">3 BHK</option><option value="1">1 BHK</option></select><select id="loc"><option>Baner</option><option>Wakad</option><option>Hinjewadi</option><option>Viman Nagar</option><option>Kothrud</option></select><button onclick="predict()">Predict Price</button></div><div id="result"></div></div><div class="sec"><h2>🔥 Trending in Pune</h2><p style="color:#64748b;margin:8px 0 16px">Best deals - No broker fees</p><div class="grid"><div class="prop"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600"><div class="pb"><h3>2 BHK - Baner</h3><p style="color:#64748b;font-size:14px">1100 sq.ft • Ready to Move</p><div class="price">₹ 1.32 Cr</div></div></div><div class="prop"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600"><div class="pb"><h3>3 BHK - Wakad</h3><p style="color:#64748b;font-size:14px">1450 sq.ft • New Launch</p><div class="price">₹ 1.65 Cr</div></div></div><div class="prop"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600"><div class="pb"><h3>2 BHK - Hinjewadi</h3><p style="color:#64748b;font-size:14px">980 sq.ft • Near IT Park</p><div class="price">₹ 98 Lakh</div></div></div></div></div><footer><h3>🏠 HomePrice Pune</h3><p style="opacity:.7;margin-top:8px">Made with ❤️ in Pune • Dipali Zalte</p></footer><script>function predict(){let a=document.getElementById('area').value||1200;let b=document.getElementById('bhk').value;let l=document.getElementById('loc').value;let base=9500;if(l=='Baner')base=12000;if(l=='Wakad')base=10500;if(l=='Hinjewadi')base=10000;if(l=='Viman Nagar')base=11500;if(l=='Kothrud')base=13000;let p=a*base+(b*400000);document.getElementById('result').innerHTML='📍 '+l+' • '+a+' sq.ft • '+b+' BHK = ₹ '+(p/10000000).toFixed(2)+' Cr';}</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomePrice Pune - Ghar Ka Sahi Daam</title>
+<style>
+*{box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{margin:0;background:#f0fdf4}
+.header{background:#059669;color:white;padding:28px 20px;text-align:center}
+.header h1{margin:0;font-size:32px}
+.header p{margin:8px 0 0;opacity:.9}
+.card{max-width:520px;background:white;margin:-10px auto 30px auto;padding:28px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+label{display:block;font-weight:600;margin:16px 0 6px;color:#111}
+input,select{width:100%;padding:13px;border:1.5px solid #ddd;border-radius:10px;font-size:15px;outline:none}
+input:focus,select:focus{border-color:#059669}
+button{width:100%;margin-top:22px;background:#059669;color:white;border:none;padding:15px;border-radius:10px;font-size:17px;font-weight:700;cursor:pointer}
+button:hover{background:#047857}
+#result{display:none;margin-top:20px;background:#ecfdf5;border:1px solid #a7f3d0;padding:18px;border-radius:12px;text-align:center}
+#result h2{margin:0;color:#059669;font-size:28px}
+#result p{margin:6px 0 0;color:#444;font-size:14px}
+.footer{text-align:center;color:#888;font-size:13px;padding-bottom:20px}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>🏠 HomePrice Pune</h1>
+<p>Pune me apne ghar ka sahi daam jaano - 1 minute me!</p>
+</div>
+<div class="card">
+<label>📍 Location</label>
+<select id="loc">
+<option value="1.25">Baner</option>
+<option value="1.35">Wakad</option>
+<option value="1.15">Hinjewadi</option>
+<option value="1.45">Kothrud</option>
+<option value="1.0">Hadapsar</option>
+<option value="1.3">Viman Nagar</option>
+<option value="0.9">Pimpri</option>
+<option value="1.5">Koregaon Park</option>
+</select>
+<label>🛏️ BHK</label>
+<select id="bhk"><option>1</option><option selected>2</option><option>3</option><option>4</option></select>
+<label>📐 Carpet Area (sq.ft)</label>
+<input type="number" id="sqft" value="750" placeholder="e.g. 750">
+<label>🏢 Floor</label>
+<select id="floor"><option>Low (1-3)</option><option
