@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomePrice - Pune's Best House Price Prediction</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+  body{background:#f8f9fa;color:#333}
+  /* NAVBAR */
+  nav{background:#fff;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px #ddd;position:sticky;top:0;z-index:100}
+  .logo{font-size:24px;font-weight:800;color:#2563eb} .logo span{color:#f59e0b}
+  .nav-links{display:flex;gap:25px;list-style:none}
+  .nav-links a{text-decoration:none;color:#333;font-weight:600}
+  .btn-primary{background:#2563eb;color:#fff;padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:15px}
+  .btn-primary:hover{background:#1d4ed8}
+  .btn-outline{background:#fff;color:#2563eb;border:2px solid #2563eb;padding:8px 18px;border-radius:8px;cursor:pointer;font-weight:600}
+  /* HERO */
+  .hero{display:flex;gap:30px;padding:40px 5%;align-items:center;background:linear-gradient(135deg,#eff6ff,#fff7ed)}
+  .hero-text{flex:1} .hero-text h1{font-size:42px;line-height:1.2;margin-bottom:15px} .hero-text h1 span{color:#2563eb}
+  .hero-text p{color:#666;font-size:17px;margin-bottom:25px;line-height:1.6}
+  .hero-img{flex:1} .hero-img img{width:100%;height:380px;object-fit:cover;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.15)}
+  .hero-btns{display:flex;gap:12px}
+  /* PREDICT BOX */
+  .predict-section{padding:40px 5%;display:flex;gap:30px;align-items:flex-start}
+  .form-box{background:#fff;padding:30px;border-radius:16px;box-shadow:0 5px 20px #ddd;flex:1}
+  .form-box h2{margin-bottom:20px}
+  .form-box label{font-weight:600;font-size:14px;display:block;margin-top:12px}
+  .form-box input,.form-box select{width:100%;padding:12px;margin-top:6px;border:1px solid #ddd;border-radius:8px;font-size:15px}
+  .form-box button{width:100%;margin-top:20px;padding:14px;background:#16a34a;color:#fff;border:none;border-radius:8px;font-size:17px;font-weight:700;cursor:pointer}
+  .form-box button:hover{background:#15803d}
+  #result{display:none;margin-top:20px;background:#dcfce7;padding:18px;border-radius:10px;text-align:center}
+  #result h3{color:#166534;font-size:22px} #result p{color:#555;font-size:13px;margin-top:5px}
+  .side-img{flex:1} .side-img img{width:100%;height:520px;object-fit:cover;border-radius:16px}
+  /* PROPERTIES */
+  .section-title{text-align:center;padding:20px 5%} .section-title h2{font-size:30px} .section-title p{color:#666;margin-top:8px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 5% 50px}
+  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 15px #ddd}
+  .card img{width:100%;height:200px;object-fit:cover}
+  .card-body{padding:16px} .card-body h3{font-size:18px} .card-body p{color:#666;font-size:14px;margin:6px 0}
+  .price{color:#16a34a;font-weight:800;font-size:18px;margin:8px 0}
+  .card-btns{display:flex;gap:8px;margin-top:10px}
+  .card-btns button{flex:1;padding:9px;border-radius:7px;cursor:pointer;font-weight:600;border:none}
+  .btn-view{background:#2563eb;color:#fff} .btn-predict{background:#fef3c7;color:#92400e}
+  /* FOOTER */
+  footer{background:#111827;color:#fff;padding:30px 5%;text-align:center}
+  footer button{margin:10px 5px;padding:10px 20px;border-radius:8px;border:none;cursor:pointer;font-weight:600}
+  @media(max-width:800px){.hero,.predict-section{flex-direction:column}.cards{grid-template-columns:1fr}.hero-text h1{font-size:32px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">🏠 Home<span>Price</span></div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#predict">Predict</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div>
+    <button class="btn-outline" onclick="alert('Login coming soon!')">Login</button>
+    <button class="btn-primary" onclick="document.getElementById('predict').scrollIntoView({behavior:'smooth'})">Predict Now →</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <h1>Find Your Dream Home <span>Price in Pune</span> in 10 Seconds</h1>
+    <p>AI-powered price prediction. Area, Bedrooms aur Location daalo - humara smart backend tumhe sahi market price batayega.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('predict').scrollIntoView({behavior:'smooth'})">🔍 Check Price Free</button>
+      <button class="btn-outline" onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})">🏘️ View Properties</button>
+    </div>
+    <p style="margin-top:20px;font-size:14px">⭐ 4.9 Rating &nbsp; | &nbsp; ✅ 10,000+ Predictions &nbsp; | &nbsp; 📍 Pune</p>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Luxury House">
+  </div>
+</div>
+
+<div class="predict-section" id="predict">
+  <div class="form-box">
+    <h2>🏠 House Price Prediction</h2>
+    <label>Area (sq.ft)</label>
+    <input id="area" type="number" placeholder="Ex: 1200">
+    <label>Bedrooms</label>
+    <input id="bed" type="number" placeholder="Ex: 3">
+    <label>Bathrooms</label>
+    <input id="bath" type="number" placeholder="Ex: 2">
+    <label>Location in Pune</label>
+    <select id="loc">
+      <option value="baner">Baner - Premium</option>
+      <option value="hinjewadi">Hinjewadi - IT Hub</option>
+      <option value="wakad">Wakad</option>
+      <option value="viman-nagar">Viman Nagar</option>
+      <option value="kothrud">Kothrud - Premium</option>
+      <option value="hadapsar">Hadapsar</option>
+      <option value="pimpri">Pimpri</option>
+      <option value="other">Other</option>
+    </select>
+    <button onclick="predict()">✨ Predict Price - Backend Se</button>
+    <div id="result">
+      <h3 id="priceText"></h3>
+      <p id="detailText"></p>
+      <button onclick="alert('Agent will call you!')" style="background:#2563eb;margin-top:10px;padding:10px 20px;width:auto">📞 Talk to Agent</button>
+      <button onclick="alert('Saved!')" style="background:#fff;color:#333;border:1px solid #ddd;margin-top:10px;padding:10px 20px;width:auto">❤️ Save Property</button>
+    </div>
+  </div>
+  <div class="side-img">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Modern House">
+  </div>
+</div>
+
+<div class="section-title" id="properties">
+  <h2>🔥 Trending Properties in Pune</h2>
+  <p>Ye properties dekh ke - Predict button dabake uska price check karo</p>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="House 1">
+    <div class="card-body">
+      <h3>2 BHK Flat - Baner</h3>
+      <p>📍 Baner Road, Pune | 1100 sq.ft</p>
+      <div class="price">₹ 1.05 Cr*</div>
+      <div class="card-btns">
+        <button class="btn-view" onclick="alert('Baner Flat Details: 2 BHK, 1100 sqft, Near Metro')">👁️ View</button>
+        <button class="btn-predict" onclick="quickPredict(1100,2,2,'baner')">⚡ Predict</button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="House 2">
+    <div class="card-body">
+      <h3>3 BHK Villa - Hinjewadi</h3>
+      <p>📍 Hinjewadi Phase 2 | 1500 sq.ft</p>
+      <div class="price">₹ 1.45 Cr*</div>
+      <div class="card-btns">
+        <button class="btn-view" onclick="alert('Villa Details: 3 BHK, 1500 sqft, Garden')">👁️ View</button>
+        <button class="btn-predict" onclick="quickPredict(1500,3,3,'hinjewadi')">⚡ Predict</button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="House 3">
+    <div class="card-body">
+      <h3>3 BHK - Kothrud</h3>
+      <p>📍 Kothrud, Pune | 1300 sq.ft</p>
+      <div class="price">₹ 1.85 Cr*</div>
+      <div class="card-btns">
+        <button class="btn-view" onclick="alert('Kothrud Flat: 3 BHK, 1300 sqft, Premium Society')">👁️ View</button>
+        <button class="btn-predict" onclick="quickPredict(1300,3,2,'kothrud')">⚡ Predict</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="contact">
+  <h2>🏠 HomePrice - Pune</h2>
+  <p style="color:#9ca3af;margin:10px 0">Sahi Price. Sahi Decision. Sahi Ghar.</p>
+  <button onclick="alert('Call: 98765 43210')" style="background:#16a34a;color:#fff">📞 Call Now</button>
+  <button onclick="alert('WhatsApp: 98765 43210')" style="background:#fff">💬 WhatsApp</button>
+  <button onclick="alert('Email: hello@homeprice.in')" style="background:#f59e0b;color:#fff">📧 Email Us</button>
+  <p style="color:#6b7280;margin-top:15px;font-size:13px">© 2026 HomePrice. Made in Pune ❤️</p>
+</footer>
+
+<script>
+async function predict(){
+  let area=document.getElementById('area').value;
+  let bed=document.getElementById('bed').value;
+  let bath=document.getElementById('bath').value;
+  let loc=document.getElementById('loc').value;
+  if(!area||!bed||!bath){alert('Sab bharo!');return;}
+  try{
+    let res=await fetch('http://localhost:3000/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({area,bed,bath,location:loc})});
+    let data=await res.json();
+    document.getElementById('result').style.display='block';
+    document.getElementById('priceText').innerText=data.priceFormatted;
+    document.getElementById('detailText').innerText='Rate: ₹'+data.ratePerSqFt.toLocaleString('en-IN')+' / sq.ft | Location: '+data.location+' | Backend se calculated';
+    document.getElementById('result').scrollIntoView({behavior:'smooth'});
+  }catch(e){alert('Backend chalu nahi hai! Terminal me node server.js chalao');}
+}
+function quickPredict(a,b,c,l){
+  document.getElementById('area').value=a;
+  document.getElementById('bed').value=b;
+  document.getElementById('bath').value=c;
+  document.getElementById('loc').value=l;
+  document.getElementById('predict').scrollIntoView({behavior:'smooth'});
+  predict();
+}
+</script>
+</body>
+</html>
